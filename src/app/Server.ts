@@ -2,8 +2,6 @@ import { Configuration, Inject, Retrive } from 'adr-express-ts';
 import { InjectedClass } from 'adr-express-ts/lib/@types';
 import { Application } from 'express';
 
-
-
 @Inject
 export default class Server implements InjectedClass {
   @Retrive('Express')
@@ -12,8 +10,6 @@ export default class Server implements InjectedClass {
   @Retrive('Configuration')
   private config?: Configuration;
 
-  
-
   public async onReady(): Promise<void> {
     try {
       if (!this.application || !this.config) {
@@ -21,8 +17,6 @@ export default class Server implements InjectedClass {
       }
 
       const log = this.config.debug.log ?? console.log;
-
-      
 
       this.application.listen(4000, '0.0.0.0', async () => {
         this.application!.emit('ready', true); // -- For Tests

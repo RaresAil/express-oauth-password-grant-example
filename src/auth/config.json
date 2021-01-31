@@ -1,0 +1,9 @@
+{
+  "cookieSecret": "bPrPdF{e6\\S3{##A:kdVy&=D){t3%YC-",
+  "cookieName": "oauth-session",
+
+  "jwtSecret": "kWB:x#czRJ[)S&eZscwbLJ=PYp[x4tB`",
+
+  "clientSecret": "4JZy5\"K<M/vj}n/dn79v-<<\"&PeL+t+b",
+  "scope": ["login"]
+}
