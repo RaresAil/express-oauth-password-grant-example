@@ -51,7 +51,7 @@ export const getJWT = <T>(token: string): T | null => {
   }
 
   const verified = jwt.verify(
-    (token || '').toString().trim(),
+    (token ?? '').toString().trim(),
     JWTSecret
   ) as JWTToken;
 

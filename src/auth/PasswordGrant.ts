@@ -69,7 +69,7 @@ export default class PasswordGrant {
         console.log('%o %o %o', 'getUser', username, password);
 
         /**
-         * Implement a function to get your user
+         * Implement a function to get your user and check the password, return null if invalid
          */
 
         return this.user;
@@ -120,8 +120,9 @@ export default class PasswordGrant {
           }
 
           // We make sure that the scope is a string array
-          const scope =
-            typeof token.scope === 'string' ? [token.scope] : token.scope;
+          const scope = Array.isArray(token.scope)
+            ? token.scope
+            : [token.scope];
 
           // Check if the user only sent the `login` scope
           // You can change this and add multiple scopes if you want
@@ -188,7 +189,7 @@ export default class PasswordGrant {
               await Token.findOne({
                 accessToken
               })
-            )?.toObject(formatDBObject) || {};
+            )?.toObject(formatDBObject) ?? {};
           if (!clientId) {
             return null;
           }

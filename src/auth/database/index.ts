@@ -37,7 +37,3 @@ export default class OAuthDatabase implements InjectedEntity {
     this.Log('OAuth database connected');
   }
 }
-
-interface EntityLoader {
-  (connection: mongoose.Connection): void;
-}

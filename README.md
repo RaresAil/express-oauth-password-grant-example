@@ -8,9 +8,12 @@
 
 - Dependencies
 
+  - adr-express-ts
+  - body-parser
   - cookie-parser
   - jsonwebtoken
   - mongoose
+  - morgan
   - oauth2-server
   - dotenv
 
